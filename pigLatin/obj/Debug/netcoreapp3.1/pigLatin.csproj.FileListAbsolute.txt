@@ -1,0 +1,14 @@
+C:\Users\yashi\source\repos\pigLatin\pigLatin\bin\Debug\netcoreapp3.1\pigLatin.exe
+C:\Users\yashi\source\repos\pigLatin\pigLatin\bin\Debug\netcoreapp3.1\pigLatin.deps.json
+C:\Users\yashi\source\repos\pigLatin\pigLatin\bin\Debug\netcoreapp3.1\pigLatin.runtimeconfig.json
+C:\Users\yashi\source\repos\pigLatin\pigLatin\bin\Debug\netcoreapp3.1\pigLatin.runtimeconfig.dev.json
+C:\Users\yashi\source\repos\pigLatin\pigLatin\bin\Debug\netcoreapp3.1\pigLatin.dll
+C:\Users\yashi\source\repos\pigLatin\pigLatin\bin\Debug\netcoreapp3.1\pigLatin.pdb
+C:\Users\yashi\source\repos\pigLatin\pigLatin\obj\Debug\netcoreapp3.1\pigLatin.csproj.AssemblyReference.cache
+C:\Users\yashi\source\repos\pigLatin\pigLatin\obj\Debug\netcoreapp3.1\pigLatin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yashi\source\repos\pigLatin\pigLatin\obj\Debug\netcoreapp3.1\pigLatin.AssemblyInfoInputs.cache
+C:\Users\yashi\source\repos\pigLatin\pigLatin\obj\Debug\netcoreapp3.1\pigLatin.AssemblyInfo.cs
+C:\Users\yashi\source\repos\pigLatin\pigLatin\obj\Debug\netcoreapp3.1\pigLatin.csproj.CoreCompileInputs.cache
+C:\Users\yashi\source\repos\pigLatin\pigLatin\obj\Debug\netcoreapp3.1\pigLatin.dll
+C:\Users\yashi\source\repos\pigLatin\pigLatin\obj\Debug\netcoreapp3.1\pigLatin.pdb
+C:\Users\yashi\source\repos\pigLatin\pigLatin\obj\Debug\netcoreapp3.1\pigLatin.genruntimeconfig.cache
