@@ -6,55 +6,103 @@ namespace pigLatin
     {
         static void Main(string[] args)
         {
-            Console.Write("Please enter a word: ");
-            string input = Console.ReadLine();
+            Console.Write("Welcome to the Pig Latin Translator!\n\n");
 
-            Console.WriteLine(PigLatin(input));
+            bool repeat = true; //check for null string
+            while (repeat)
+            {
+                Console.WriteLine("Enter a line to be translated: ");
+                string input = Console.ReadLine();
 
-        
+                Console.WriteLine(PigLatinSentences(input));
+
+                while (true)
+                {
+                    Console.Write("Would you like to translate another line? (y/n): ");
+                    string answer = Console.ReadLine();
+
+                    if (answer == "n")
+                    {
+                        Console.WriteLine("\nGoodbye!");
+                        repeat = false;
+                        break;
+                    }
+                    else if (answer == "y")
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nInvalid input. Try again.\n");
+                    }
+                }
+            }
         }
 
-        public static string PigLatin(string x)
+        public static bool HasNumOrSymbols(string word)
         {
-            //x = x.ToLower();
-
-            //check if there is a non-letter or punctuation in input
-            foreach (char check in x)
+            bool result = false;
+            foreach (char check in word)
             {
                 if (!char.IsLetter(check) && !char.IsPunctuation(check))
                 {
-                    return x;
+                    result = true;
                 }
                 else
                 {
                     continue;
                 }
             }
-            
-            if (x[0] == 'a' || x[0] == 'e' || x[0] == 'i' || x[0] == 'o' || x[0] == 'u'
-                && x[0] != 'A' && x[0] != 'E' && x[0] != 'I' && x[0] != 'O' && x[0] != 'U')
+            return result;
+        }
+
+        public static string PigLatinSentences(string sentence)
+        {
+            string[] words = sentence.Split(' ');   //create array containing each word in the sentence
+            string result = "";                     //initialize string variable to hold end result
+            int indexNum = 0;                       //initiate index for refer to each word
+
+            //loop for each word
+            while (indexNum < words.Length)
             {
-                return (x + "way");
-            }
-            else
-            {
-                foreach (char n in x)
+                //refer to each word in array at indexNum in array words
+                string word = words[indexNum];
+
+                //check if there is a non-letter or punctuation in input
+                if (HasNumOrSymbols(word))
                 {
-                    if (x[0] != 'a' && x[0] != 'e' && x[0] != 'i' && x[0] != 'o' && x[0] != 'u' 
-                        && x[0] != 'A' && x[0] != 'E' && x[0] != 'I' && x[0] != 'O' && x[0] != 'U')
+                    result += word + " ";
+                }
+                else
+                {
+                    if (word[0] == 'a' || word[0] == 'e' || word[0] == 'i' || word[0] == 'o' || word[0] == 'u'
+                        || word[0] == 'A' || word[0] == 'E' || word[0] == 'I' || word[0] == 'O' || word[0] == 'U')
                     {
-                        x = x.Substring(1) + x[0];
-                        //Console.WriteLine(x);
+                        result += word + "way ";
                     }
                     else
                     {
-                        //Console.WriteLine("why is this happening");
-                        break;
+                        foreach (char letter in word)
+                        {
+                            if (word[0] != 'a' && word[0] != 'e' && word[0] != 'i' && word[0] != 'o' && word[0] != 'u'
+                                && word[0] != 'A' && word[0] != 'E' && word[0] != 'I' && word[0] != 'O' && word[0] != 'U')
+                            {
+                                word = word.Substring(1) + word[0];
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+
+                        result += word + "ay ";
                     }
                 }
-
-                return x + "ay";
+                indexNum += 1;
             }
+            result = "\n" + result.Substring(0, 1).ToUpper() + result.Substring(1);
+            return result;
         }
+        
     }
 }
